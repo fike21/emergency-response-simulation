@@ -1,41 +1,45 @@
-#🚒 Emergency Response Simulator
- 
- 📝 Description
- 
- C# console application simulating emergency unit dispatch to random city incidents, demonstrating OOP principles.
- 
-  🚀 Features
- - Police, Firefighter, and Ambulance units
- - Random incident generation
- - Scoring system
- - Clean OOP architecture
+#classDiagram
+    class Incident {
+        +string type
+        +string location
+        +DateTime reportedTime
+        +string severity
+        +GetIncidentDetails() string
+    }
 
- - 
- 🛠️ How to Run
- ```bash
- dotnet run
- ```
+    class EmergencyUnit {
+        <<abstract>>
+        +string name
+        +int responseSpeed
+        +string currentStatus
+        +CanHandle(incidentType: string) bool
+        +RespondToIncident(incident: Incident) void
+        +UpdateStatus(newStatus: string) void
+    }
 
- 📊 Class Diagram
- ```mermaid
- classDiagram
-     class Incident {
-         +string Type
-         +string Location
-     }
-     
-     class EmergencyUnit {
-         <<abstract>>
-         +string Name
-         +int Speed
-         +bool CanHandle(string)
-         +void RespondToIncident(Incident)
-     }
-     
-     EmergencyUnit <|-- Police
-     EmergencyUnit <|-- Firefighter
-     EmergencyUnit <|-- Ambulance
- ```
+    class Police {
+        +int officersAvailable
+        +string jurisdiction
+        +CoordinateWithOtherUnits() void
+    }
+
+    class Firefighter {
+        +string fireStation
+        +bool hasSpecialEquipment
+        +RequestWaterSupply() void
+    }
+
+    class Ambulance {
+        +string hospitalAffiliation
+        +bool hasParamedic
+        +NotifyHospital() void
+    }
+
+    EmergencyUnit <|-- Police
+    EmergencyUnit <|-- Firefighter
+    EmergencyUnit <|-- Ambulance
+
+    Incident "1" --* "1..*" EmergencyUnit: triggers response
 
 
 
