@@ -1,5 +1,5 @@
-              ABOUT CODE
-    By [Fikire Tibebu   ID: DBUR/0737/13]
+              ABOUT 
+    BY [FIKIRE TIBEBU] ID: DBUR/ 0737/13
  Emergency Response Simulation Program
 This program simulates emergency response units handling incidents. The user interacts by entering incident types and locations. The units respond if the incident matches their specialization, earning or losing points for valid or invalid interactions.
 
