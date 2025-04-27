@@ -1,6 +1,6 @@
-#🚒 Emergency Response Simulator  
-
-  📝 Description
+#🚒 Emergency Response Simulator
+ 
+ 📝 Description
  
  C# console application simulating emergency unit dispatch to random city incidents, demonstrating OOP principles.
  
@@ -34,4 +34,9 @@
      
      EmergencyUnit <|-- Police
      EmergencyUnit <|-- Firefighter
-     EmergencyUnit <|-- Ambul
+     EmergencyUnit <|-- Ambulance
+ ```
+
+
+
+
